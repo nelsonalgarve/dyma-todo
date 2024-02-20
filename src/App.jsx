@@ -19,11 +19,19 @@ function App() {
 		setTodoList(todoList.filter((todo) => todo._id !== id));
 	};
 
-	const toggleTodo = (id) => {
+	const toggleDone = (id) => {
 		setTodoList(
 			todoList.map((todo) =>
 				todo._id === id ? { ...todo, done: !todo.done } : todo
 			)
+		);
+	};
+
+	const toggleEdit = (id) => {
+		setTodoList(
+			todoList.map((todo) => {
+				todo._id === id ? { ...todo, edit: true } : todo;
+			})
 		);
 	};
 
@@ -35,7 +43,8 @@ function App() {
 				<TodoList
 					todoList={todoList}
 					deleteTodo={deleteTodo}
-					toggleTodo={toggleTodo}
+					toggleDone={toggleDone}
+					toggleEdit={toggleEdit}
 				/>
 			</div>
 		</div>

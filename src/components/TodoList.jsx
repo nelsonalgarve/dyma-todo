@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
-function TodoList({ todoList }) {
+import TodoItem from './TodoItem';
+
+function TodoList({ todoList, deleteTodo, toggleTodo }) {
 	console.log(todoList);
 	return (
 		<div>
@@ -7,8 +9,14 @@ function TodoList({ todoList }) {
 				<p>La liste est vide</p>
 			) : (
 				<ul>
-					{todoList.map((e) => (
-						<li key={e._id}>{e.content}</li>
+					{todoList.map((todo) => (
+						// <TodoItem key={todo._id} todo={todo} deleteTodo={deleteTodo} />
+						<TodoItem
+							key={todo._id}
+							todo={todo}
+							deleteTodo={() => deleteTodo(todo._id)}
+							toggleTodo={() => toggleTodo(todo._id)}
+						/>
 					))}
 				</ul>
 			)}

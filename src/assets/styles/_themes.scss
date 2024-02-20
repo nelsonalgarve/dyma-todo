@@ -23,3 +23,13 @@
 	border-radius: 20px;
 	background-color: var(--gray2);
 }
+
+input {
+	border-radius: 4px;
+	border: 1px solid var(--gray2);
+	padding: 10px 15px;
+	::placeholder {
+		font-family: var(-font-family);
+		color: red;
+	}
+}

@@ -6,6 +6,7 @@ export default function TodoList({
 	deleteTodo,
 	toggleTodo,
 	toggleTodoEdit,
+	selectTodo,
 	editTodo,
 }) {
 	return todoList.length ? (
@@ -25,6 +26,7 @@ export default function TodoList({
 						deleteTodo={() => deleteTodo(todo.id)}
 						toggleTodo={() => toggleTodo(todo.id)}
 						editTodo={() => toggleTodoEdit(todo.id)}
+						selectTodo={() => selectTodo(todo.id)}
 					/>
 				)
 			)}

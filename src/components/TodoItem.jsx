@@ -26,7 +26,7 @@ export default function TodoItem({
 				text="Valider"
 			/>
 			<Button
-				className="btn btn-primary mr-15"
+				className="mr-15"
 				onClick={(e) => {
 					e.stopPropagation();
 					editTodo();
@@ -34,7 +34,7 @@ export default function TodoItem({
 				text="Modifier"
 			/>
 			<Button
-				className="btn btn-reverse-primary"
+				className=""
 				onClick={(e) => {
 					e.stopPropagation();
 					deleteTodo();
